@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quiz3.css" />
+  </head>
+  <body>
+    <div class="home-box custom-box ">
+      <h3>امتحان القطعة مستوي أول</h3>
+      <p><span class="total-question"></span>&nbsp;:&nbsp;عدد الاسألة</p>
+      <button type="button" class="btn" onclick="startQuzi()">ابدأ الامتحان</button>
+    </div>
+
+    <div class="quiz-box custom-box hide">
+      <div class="question-number">
+      </div>
+
+      <div class="question-text">
+      </div>
+
+      <div class="option-container">
+      
+      </div>
+
+      <div class="next-question-btn">
+        <button type="button" class="btn" onclick="next()">التالي</button>
+      </div>
+      <div class="answers-indicator">
+     
+      </div>
+    </div>
+    <div class="result-box custom-box hide">
+      <h1>النتيجة النهائية
+      </h1>
+      <table>
+        <tr>
+            <td><span class="total-question"></span></td>
+          <td>عدد الأسألة</td>
+          
+        </tr>
+        <tr>
+            <td><span class="total-attempt"></span></td>
+            <td>عدد الأسألة التي تم الاجابة عليها</td>
+    
+        </tr>
+         <tr>
+            <td><span class="total-correct"></span></td>
+            <td>عدد الأجابة الصحيحة</td>
+        </tr>
+        <tr>
+            <td><span class="total-wrong"></span></td>
+            <td>عدد الأجابة الخطأ</td>
+        </tr>
+        <tr>
+            <td><span class="percentage"><span></td>
+                <td>النسبة المئوية</td>
+        </tr>
+        <tr>
+            <td><span class="total-score"></span></td>
+            <td>عدد أجاباتك النهائية</td>
+        </tr>
+      </table>
+      <button type="button" class="btn" onclick="tryAgainQuiz()">جرب مره اخري</button>
+      <button type="button" class="btn" ><a href="home.html">الرجوع الي الرئسية</a></button>
+
+    </div>
+  </body>
+  <script src="quiz3.js"></script>
+  <script src="app.js"></script>
+</html>

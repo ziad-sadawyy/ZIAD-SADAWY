@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTP-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css" />
+    
+    <title>أل سعداوي</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#"><i class="fa-regular fa-pen-to-square"></i>  <i class="fa-solid fa-s"></i> <i class="fa-solid fa-a"></i> <i class="fa-solid fa-d"></i> <i class="fa-solid fa-a"></i> <i class="fa-solid fa-w"></i> <i class="fa-solid fa-y"></i> <i class="fa-solid fa-brain"></i></a></div>
+        <ul class="link">
+          <li><a href="quiz3.html">start quiz</a></li>
+          <li><a id="btn" class="bage" data-name="p-1" href="#">contact</a></li>
+        </ul>
+        
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars" onclick="audio.play();"></i>
+        </div>
+      </div>
+      <div class="dropdown_menu">
+        <li><a class="bage" href="quiz3.html">start quiz</a></li>
+        <li><a id="btn" class="bage" data-name="p-1" href="#">contact</a></li>
+    </header>
+   
+    <div class="products-preview">
+      <div id="btn" class="preview" data-target="p-1">
+         <i class="times" ><button id="btn" onclick="audio.play();">✕</button></i>
+         <h3>contact</h3>   
+         <div class="buttons">
+            <a href="https://wa.me/+201157166373" class="whatsapp"><i class="fa-brands fa-whatsapp"></i> whatsapp</a>
+            <a href="mailto:ziad46333@gmail.com" class="email"><i class="fa-regular fa-envelope"></i> email</a>
+         </div>
+      </div>
+      <script >
+
+
+        const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+    const audio = new Audio();
+    audio.src = "audio/click.mp3"
+    toggleBtn.onclick = function (){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+    
+    let preveiwContainer = document.querySelector('.products-preview');
+    let previewBox = preveiwContainer.querySelectorAll('.preview');
+    document.querySelectorAll('.bage').forEach(bage =>{
+        bage.onclick = () =>{
+        preveiwContainer.style.display = 'flex';
+        let name = bage.getAttribute('data-name');
+        previewBox.forEach(preview =>{
+          let target = preview.getAttribute('data-target');
+          if(name == target){
+            preview.classList.add('active');
+          }
+        });
+      };
+    });
+    
+    previewBox.forEach(close =>{
+      close.querySelector('.times').onclick = () =>{
+        close.classList.remove('active');
+        preveiwContainer.style.display = 'none';
+      };
+    });
+    
+      </script>
+  </body>
+  
+
+ 
+</html>
